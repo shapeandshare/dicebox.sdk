@@ -1,4 +1,4 @@
-# dicebox
+# Dicebox SDK
                Let's shake things up!
 
 Overview
