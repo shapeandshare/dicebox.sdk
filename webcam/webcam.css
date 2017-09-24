@@ -1,0 +1,57 @@
+video {
+    float: left;
+    margin: 10px;
+    background-color: #FFFFFF;
+    border: 10px solid #444;
+    clear: both;
+}
+
+canvas {
+    float: left;
+    margin: 10px;
+    background-color: #FFFFFF;
+    border: 10px solid #444;
+}
+
+#results {
+    float: left;
+    margin: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #444;
+    clear: both;
+}
+
+#categoriespanel {
+    float: right;
+    margin: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #444;
+}
+
+#statuspanel {
+    float: right;
+    margin: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #444;
+    clear: left;
+}
+
+#recordButton {
+    float:right;
+    bottom:0;
+    margin: 10px;
+}
+
+body {
+    background-color: #8c8c8c;
+}
+
+#footer {
+    position:fixed;
+    bottom:0;
+    font-size: 6pt;
+}
+
+p, h2 {
+    font-family: "Verdana", Monospace, Sans-serif;
+}

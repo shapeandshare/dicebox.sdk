@@ -1,0 +1,3 @@
+[submodule "dicebox.core"]
+	path = dicebox.core
+	url = https://github.com/shapeandshare/dicebox.core.git
