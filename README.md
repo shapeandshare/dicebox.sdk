@@ -29,7 +29,7 @@ High Level Components
 * **Client**
 
     There are several client implementations included with dicebox.
-    * [webcam](https://github.com/joshburt/com.shapeandshare.dicebox/tree/master/webcam) is the recommend client for most use cases.  It is a simple html5/css/javascript client and supervised training program.
+    * [webcam](https://github.com/shapeandshare/dicebox.sdk/tree/master/webcam) is the recommend client for most use cases.  It is a simple html5/css/javascript client and supervised training program.
     * dicebox_test_client.py - meant for bulk image classification and trained network validation.
     * (_legacy_) dicebox_client.py - a python opencv thick client and supervised training program
     * (_legacy_) dicebox_multi_client.py - like the dicebox_client.py but classifies several portions of the screen.
