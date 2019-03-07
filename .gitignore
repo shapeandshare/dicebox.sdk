@@ -6,8 +6,9 @@ datasets/
 *.hdf5
 *.log
 client/dicebox_test_data/
+venv/
 
-#what io have done..
+#what have i done..
 # sym links
 primordialpool/datasets
 primordialpool/lib
