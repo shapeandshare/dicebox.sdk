@@ -1,0 +1,10 @@
+[DATASET]
+name = mnist_training
+image_width = 28
+image_height = 28
+categories = 10
+
+--env DATASET='mnist_training'
+--env NB_CLASSES='10'
+--env IMAGE_WIDTH='28'
+--env IMAGE_HEIGHT='28'
