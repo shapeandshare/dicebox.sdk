@@ -1,0 +1,89 @@
+docker run -d --hostname rabbitmq --name rabbitmq -e RABBITMQ_DEFAULT_USER=joshburt -e RABBITMQ_DEFAULT_PASS=ed407fad rabbitmq:3-management
+docker run -d --hostname rabbitmq --name rabbitmq -e RABBITMQ_DEFAULT_USER=joshburt -e RABBITMQ_DEFAULT_PASS=ed407fad -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-10c763b9.efs.us-west-2.amazonaws.com:/ /mnt/efs
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport,uid=1000,gid=1000 fs-10c763b9.efs.us-west-2.amazonaws.com:/ /mnt/efs
+
+
+
+sensory service
+sensory service batch processor
+training service
+training processor
+classification service
+primordial pool
+client / training application
+
+
+--detach \
+--log-driver json-file \
+
+
+
+
+docker run -it \
+--publish 8002:80 \
+--mount type=bind,source=/Users/joshburt/Workbench/dicebox.io,destination=/dicebox,consistency=cached \
+--env API_ACCESS_KEY='9b2b6be0-2397-414d-8882-da9d53cd285e' \
+--env SENSORY_SERVICE_RABBITMQ_URI='amqp://' \
+--env SENSORY_SERVICE_RABBITMQ_SERVER='172.16.0.3' \
+--env SENSORY_SERVICE_RABBITMQ_PORT='5672' \
+--name sensoryservice shapeandshare/dicebox.sensoryservice:latest
+
+
+docker run -it \
+--mount type=bind,source=/Users/joshburt/Workbench/dicebox.io,destination=/dicebox,consistency=cached \
+--env API_ACCESS_KEY='9b2b6be0-2397-414d-8882-da9d53cd285e' \
+--env SENSORY_SERVICE_RABBITMQ_URI='amqp://' \
+--env SENSORY_SERVICE_RABBITMQ_SERVER='172.16.0.3' \
+--env SENSORY_SERVICE_RABBITMQ_PORT='5672' \
+--name sensorybatchprocessor shapeandshare/dicebox.sensorybatchprocessor:latest
+
+
+docker run -it \
+--publish 8003:80 \
+--mount type=bind,source=/Users/joshburt/Workbench/dicebox.io,destination=/dicebox,consistency=cached \
+--env API_ACCESS_KEY='9b2b6be0-2397-414d-8882-da9d53cd285e' \
+--env TRAINING_SERVICE_RABBITMQ_RABBITMQ_URI='amqp://' \
+--env TRAINING_SERVICE_RABBITMQ_SERVER='172.16.0.3' \
+--env TRAINING_SERVICE_RABBITMQ_PORT='5672' \
+--name trainingservice shapeandshare/dicebox.trainingservice:latest
+
+
+
+docker run -it \
+--mount type=bind,source=/Users/joshburt/Workbench/dicebox.io,destination=/dicebox,consistency=cached \
+--env API_ACCESS_KEY='9b2b6be0-2397-414d-8882-da9d53cd285e' \
+--env SENSORY_URI='http://' \
+--env SENSORY_SERVER='172.16.0.3' \
+--env SENSORY_PORT='8002' \
+--env SENSORY_SERVICE_RABBITMQ_URI='amqp://' \
+--env SENSORY_SERVICE_RABBITMQ_SERVER='172.16.0.3' \
+--env SENSORY_SERVICE_RABBITMQ_PORT='5672' \
+--env TRAINING_PROCESSOR_SERVICE_RABBITMQ_RABBITMQ_URI='amqp://' \
+--env TRAINING_PROCESSOR_SERVICE_RABBITMQ_SERVER='172.16.0.3' \
+--env TRAINING_PROCESSOR_SERVICE_RABBITMQ_PORT='5672' \
+--env LOAD_BEST_WEIGHTS_ON_START=False \
+--name trainingprocessor shapeandshare/dicebox.trainingprocessor:latest
+
+--env MODEL_WEIGHTS_FILENAME='PREVIOUS_TRAINING_GUID.hdf5' \
+
+
+docker run -it \
+--mount type=bind,source=/Users/joshburt/Workbench/dicebox.io,destination=/dicebox,consistency=cached \
+--env API_ACCESS_KEY='9b2b6be0-2397-414d-8882-da9d53cd285e' \
+--env SENSORY_URI='http://' \
+--env SENSORY_SERVER='172.16.0.3' \
+--env SENSORY_PORT='8002' \
+--env SENSORY_SERVICE_RABBITMQ_URI='amqp://' \
+--env SENSORY_SERVICE_RABBITMQ_SERVER='172.16.0.3' \
+--env SENSORY_SERVICE_RABBITMQ_PORT='5672' \
+--env TRAINING_PROCESSOR_SERVICE_RABBITMQ_RABBITMQ_URI='amqp://' \
+--env TRAINING_PROCESSOR_SERVICE_RABBITMQ_SERVER='172.16.0.3' \
+--env TRAINING_PROCESSOR_SERVICE_RABBITMQ_PORT='5672' \
+--env LOAD_BEST_WEIGHTS_ON_START=True \
+--name trainingprocessor shapeandshare/dicebox.trainingprocessor:latest
+
+
+
