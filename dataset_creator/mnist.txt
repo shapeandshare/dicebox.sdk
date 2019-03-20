@@ -8,3 +8,80 @@ categories = 10
 --env NB_CLASSES='10'
 --env IMAGE_WIDTH='28'
 --env IMAGE_HEIGHT='28'
+
+------------------------------------------
+
+Examples from the primordial pool based off of 10000 item training sets
+
+3/18/2019 06:39:56 PM - INFO - --------------------------------------------------------------------------------
+03/18/2019 06:39:56 PM - INFO - Top 5 individuals in current generation
+03/18/2019 06:39:56 PM - INFO - --------------------------------------------------------------------------------
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'rmsprop', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.20%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'adagrad', 'nb_neurons': 987}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.20%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'adam', 'nb_neurons': 233}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.10%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'nadam', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.10%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'hard_sigmoid', 'optimizer': u'adam', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.10%
+03/18/2019 06:39:56 PM - INFO - ***Doing generation 11 of 100***
+03/18/2019 06:39:56 PM - INFO - --------------------------------------------------------------------------------
+03/18/2019 06:39:56 PM - INFO - Individuals in current generation
+03/18/2019 06:39:56 PM - INFO - --------------------------------------------------------------------------------
+03/18/2019 06:39:56 PM - INFO - Individuals in current generation
+03/18/2019 06:39:56 PM - INFO - --------------------------------------------------------------------------------
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'rmsprop', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.20%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'adagrad', 'nb_neurons': 987}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.20%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'adadelta', 'nb_neurons': 233}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.10%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'nadam', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.10%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'hard_sigmoid', 'optimizer': u'adam', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.10%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'hard_sigmoid', 'optimizer': u'rmsprop', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.10%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 1, 'activation': u'relu', 'optimizer': u'adagrad', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.10%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'rmsprop', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.10%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 5, 'activation': u'relu', 'optimizer': u'rmsprop', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.10%
+03/18/2019 06:39:56 PM - INFO - {'nb_layers': 2, 'activation': u'softplus', 'optimizer': u'nadam', 'nb_neurons': 377}
+03/18/2019 06:39:56 PM - INFO - Network accuracy: 99.00%
+
+03/19/2019 07:38:01 AM - INFO - --------------------------------------------------------------------------------
+03/19/2019 07:38:01 AM - INFO - Top 5 individuals in current generation
+03/19/2019 07:38:01 AM - INFO - --------------------------------------------------------------------------------
+03/19/2019 07:38:01 AM - INFO - {'nb_layers': 5, 'activation': u'hard_sigmoid', 'optimizer': u'adam', 'nb_neurons': 233}
+03/19/2019 07:38:01 AM - INFO - Network accuracy: 99.30%
+03/19/2019 07:38:01 AM - INFO - {'nb_layers': 1, 'activation': u'sigmoid', 'optimizer': u'rmsprop', 'nb_neurons': 377}
+03/19/2019 07:38:01 AM - INFO - Network accuracy: 99.20%
+03/19/2019 07:38:01 AM - INFO - {'nb_layers': 1, 'activation': u'linear', 'optimizer': u'adagrad', 'nb_neurons': 987}
+03/19/2019 07:38:01 AM - INFO - Network accuracy: 99.20%
+03/19/2019 07:38:01 AM - INFO - {'nb_layers': 5, 'activation': u'relu', 'optimizer': u'adam', 'nb_neurons': 377}
+03/19/2019 07:38:01 AM - INFO - Network accuracy: 99.20%
+03/19/2019 07:38:01 AM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'adadelta', 'nb_neurons': 233}
+03/19/2019 07:38:01 AM - INFO - Network accuracy: 99.10%
+03/19/2019 07:38:01 AM - INFO - ***Doing generation 21 of 100***
+03/19/2019 07:38:01 AM - INFO - --------------------------------------------------------------------------------
+03/19/2019 07:38:01 AM - INFO - Individuals in current generation
+03/19/2019 07:38:01 AM - INFO - --------------------------------------------------------------------------------
+
+03/19/2019 09:59:33 AM - INFO - --------------------------------------------------------------------------------
+03/19/2019 09:59:33 AM - INFO - Top 5 individuals in current generation
+03/19/2019 09:59:33 AM - INFO - --------------------------------------------------------------------------------
+03/19/2019 09:59:33 AM - INFO - {'nb_layers': 5, 'activation': u'hard_sigmoid', 'optimizer': u'adam', 'nb_neurons': 233}
+03/19/2019 09:59:33 AM - INFO - Network accuracy: 99.30%
+03/19/2019 09:59:33 AM - INFO - {'nb_layers': 1, 'activation': u'sigmoid', 'optimizer': u'rmsprop', 'nb_neurons': 377}
+03/19/2019 09:59:33 AM - INFO - Network accuracy: 99.20%
+03/19/2019 09:59:33 AM - INFO - {'nb_layers': 1, 'activation': u'linear', 'optimizer': u'adagrad', 'nb_neurons': 987}
+03/19/2019 09:59:33 AM - INFO - Network accuracy: 99.20%
+03/19/2019 09:59:33 AM - INFO - {'nb_layers': 5, 'activation': u'relu', 'optimizer': u'adam', 'nb_neurons': 377}
+03/19/2019 09:59:33 AM - INFO - Network accuracy: 99.20%
+03/19/2019 09:59:33 AM - INFO - {'nb_layers': 3, 'activation': u'relu', 'optimizer': u'adadelta', 'nb_neurons': 233}
+03/19/2019 09:59:33 AM - INFO - Network accuracy: 99.10%
+03/19/2019 09:59:33 AM - INFO - ***Doing generation 22 of 100***
