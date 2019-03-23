@@ -16,3 +16,10 @@ server/lib
 lonestar/datasets
 lonestar/lib
 category_map.json
+
+projects/mnist/lib
+projects/mnist/logs
+projects/mnist/mnist raw
+
+projects/dicebox/lib
+
