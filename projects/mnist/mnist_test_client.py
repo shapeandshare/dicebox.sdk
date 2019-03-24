@@ -2,6 +2,34 @@ import requests
 from lib import dicebox_config as config  # import our high level configuration
 from lib import filesystem_connecter # inport our file system connector for input
 import json # for writing category data to file
+import logging
+import os
+
+###############################################################################
+# Allows for easy directory structure creation
+# https://stackoverflow.com/questions/273192/how-can-i-create-a-directory-if-it-does-not-exist
+###############################################################################
+def make_sure_path_exists(path):
+    try:
+        if os.path.exists(path) is False:
+            os.makedirs(path)
+    except OSError as exception:
+        if exception.errno != errno.EEXIST:
+            raise
+
+
+###############################################################################
+# Setup logging.
+###############################################################################
+make_sure_path_exists(config.LOGS_DIR)
+logging.basicConfig(
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%m/%d/%Y %I:%M:%S %p',
+    level=logging.DEBUG,
+    filemode='w',
+    filename="%s/mnist_test_client.%s.log" % (config.LOGS_DIR, os.uname()[1])
+)
+
 
 def get_category_map():
     jdata = {}
