@@ -1,9 +1,16 @@
 import requests
-from lib import dicebox_config as config  # import our high level configuration
-from lib import filesystem_connecter # inport our file system connector for input
 import json # for writing category data to file
 import logging
 import os
+import errno
+import dicebox.dicebox_config
+import dicebox.filesystem_connecter
+
+
+# Config
+config_file = './dicebox.config'
+CONFIG = dicebox.docker_config.DockerConfig(config_file)
+
 
 ###############################################################################
 # Allows for easy directory structure creation
@@ -21,13 +28,13 @@ def make_sure_path_exists(path):
 ###############################################################################
 # Setup logging.
 ###############################################################################
-make_sure_path_exists(config.LOGS_DIR)
+make_sure_path_exists(CONFIG.LOGS_DIR)
 logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
     datefmt='%m/%d/%Y %I:%M:%S %p',
     level=logging.DEBUG,
     filemode='w',
-    filename="%s/mnist_test_client.%s.log" % (config.LOGS_DIR, os.uname()[1])
+    filename="%s/mnist_test_client.%s.log" % (CONFIG.LOGS_DIR, os.uname()[1])
 )
 
 
@@ -52,11 +59,11 @@ def get_category_map():
 def make_api_call(end_point, json_data, call_type):
     headers = {
         'Content-type': 'application/json',
-        'API-ACCESS-KEY': config.API_ACCESS_KEY,
-        'API-VERSION': config.API_VERSION
+        'API-ACCESS-KEY': CONFIG.API_ACCESS_KEY,
+        'API-VERSION': CONFIG.API_VERSION
     }
     try:
-        url = "%s%s:%i/%s" % (config.SERVER_URI, config.CLASSIFICATION_SERVER, config.SERVER_PORT, end_point)
+        url = "%s%s:%i/%s" % (CONFIG.SERVER_URI, CONFIG.CLASSIFICATION_SERVER, CONFIG.SERVER_PORT, end_point)
         response = None
         if call_type == 'GET':
             response = requests.get(url, data=json_data, headers=headers)
@@ -74,7 +81,7 @@ def make_api_call(end_point, json_data, call_type):
 ###############################################################################
 # prep our data sets
 ###############################################################################
-fsc = filesystem_connecter.FileSystemConnector(config.DATA_DIRECTORY)
+fsc = dicebox.filesystem_connecter.FileSystemConnector(CONFIG.DATA_DIRECTORY, False, config_file)
 network_input_index = fsc.get_data_set()
 print('Network Input Index: %s' % network_input_index)
 
@@ -94,9 +101,9 @@ for item, metadata in network_input_index.iteritems():
     # metadata = network_input_index[item]
     # item = key
     # metadata = value
-    print("(%s%s)(%s)" % (config.DATA_DIRECTORY, item, metadata[1]))
+    print("(%s%s)(%s)" % (CONFIG.DATA_DIRECTORY, item, metadata[1]))
 
-    filename = "%s%s" % (config.DATA_DIRECTORY, item)
+    filename = "%s%s" % (CONFIG.DATA_DIRECTORY, item)
     with open(filename, 'rb') as file:
         file_content = file.read()
 

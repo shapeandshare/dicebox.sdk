@@ -1,5 +1,5 @@
-docker run -d --hostname rabbitmq --name rabbitmq -e RABBITMQ_DEFAULT_USER=joshburt -e RABBITMQ_DEFAULT_PASS=ed407fad rabbitmq:3-management
-docker run -d --hostname rabbitmq --name rabbitmq -e RABBITMQ_DEFAULT_USER=joshburt -e RABBITMQ_DEFAULT_PASS=ed407fad -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+docker run -d --hostname rabbitmq --name rabbitmq -e RABBITMQ_DEFAULT_USER=rabbitadmin -e RABBITMQ_DEFAULT_PASS=password!123 rabbitmq:3-management
+docker run -d --hostname rabbitmq --name rabbitmq -e RABBITMQ_DEFAULT_USER=rabbitadmin -e RABBITMQ_DEFAULT_PASS=password!123 -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 
 
 sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-10c763b9.efs.us-west-2.amazonaws.com:/ /mnt/efs
