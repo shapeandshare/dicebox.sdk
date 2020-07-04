@@ -19,7 +19,7 @@ category_map.json
 
 projects/mnist/lib
 projects/mnist/logs
-projects/mnist/mnist raw
+projects/mnist/data
 
 projects/dicebox/lib
 
