@@ -19,7 +19,9 @@ category_map.json
 
 projects/mnist/lib
 projects/mnist/logs
-projects/mnist/data
+
+projects/mnist/mnist_test_28x28
+projects/mnist/mnist_train_28x28
 
 projects/dicebox/lib
 
