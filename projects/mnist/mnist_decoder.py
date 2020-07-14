@@ -25,18 +25,19 @@ def make_sure_path_exists(path):
 ###############################################################################
 # Decode and store ..
 ###############################################################################
-mndata = MNIST('mnist')
+mndata = MNIST('./data')
+mndata.gz = True
 image_width = 28
 image_height = 28
 
 
 # training data
-# images, labels = mndata.load_training()
-# dataset_name = 'training'
+images, labels = mndata.load_training()
+dataset_name = 'train'
 
 # testing data
-images, labels = mndata.load_testing()
-dataset_name = 'testing'
+# images, labels = mndata.load_testing()
+# dataset_name = 'test'
 
 for i in range(len(images)):
     category = str(labels[i])
@@ -50,7 +51,7 @@ for i in range(len(images)):
             pixels[x,y] = (image_data[index], image_data[index], image_data[index])
             index += 1
 
-    path = "./mnist/%s/%s/" % (dataset_name, category)
+    path = "./data/%s/%s/" % (dataset_name, category)
     make_sure_path_exists(path)
     img.save("%s/mnist_%s_%s_%ix%i_%i.png" % (
         path,
